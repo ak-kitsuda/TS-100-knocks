@@ -29,7 +29,7 @@
       <div v-for="(value, key) in currentStateStore.currentQuiz.options" :key="key"
         class="q-mt-sm flex column items-center full-width">
         <q-btn :label="`${key} : ${value}`" @click="handleClickOption(key)" style="text-transform: none;"
-          class="full-width" color="secondary" size="lg" />
+          class="full-width" color="primary" size="lg" />
       </div>
 
       <div class="flex column justify-center">
@@ -47,7 +47,7 @@
           <div class="col-6 flex justify-center">
             <q-btn v-if="currentStateStore.progress === QUIZ_NUM" label="Reset" @click="handleClickReset" color="orange"
               size="lg" class="full-width" />
-            <q-btn v-else label="Next" @click="handleClickNext" color="primary" size="lg" class="full-width" />
+            <q-btn v-else label="Next" @click="handleClickNext" color="secondary" size="lg" class="full-width" />
           </div>
 
         </div>
@@ -56,7 +56,7 @@
       <!-- 正解数（最後の問題時のみ表示） -->
       <div class="q-mt-md col text-h3 text-bold text-center ">
         <p :style="{ visibility: currentStateStore.progress === QUIZ_NUM ? 'visible' : 'hidden' }">
-          正解数：{{ currentStateStore.corrections }} %
+          正解率：{{ currentStateStore.corrections }} %
         </p>
       </div>
     </div>
