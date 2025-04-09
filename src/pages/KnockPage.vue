@@ -65,14 +65,12 @@
 <script setup lang="ts">
 import { useCurrentStateStore } from 'src/stores/CurrentStateStore';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
 
 const QUIZ_NUM: number = 100;
 
 const currentStateStore = useCurrentStateStore();
-const { currentQuiz, progress, chosenAnswer, corrections } = storeToRefs(currentStateStore);
+const { currentQuiz, progress, chosenAnswer, isCorrect, corrections } = storeToRefs(currentStateStore);
 
-const isCorrect = ref<boolean>(false);
 
 const handleClickOption = (ans: 'a' | 'b' | 'c' | 'd'): void => {
   // すでに回答済みの場合は何もしない
@@ -81,20 +79,15 @@ const handleClickOption = (ans: 'a' | 'b' | 'c' | 'd'): void => {
   }
 
   chosenAnswer.value = ans;
-  if (ans === currentQuiz.value.answer) {
-    isCorrect.value = true;
-  }
-  currentStateStore.countCorrectNum(isCorrect.value);
+  currentStateStore.countCorrectNum();
 };
 
 const handleClickNext = (): void => {
   currentStateStore.setCurrentQuiz();
-  isCorrect.value = false;
 };
 
 const handleClickReset = (): void => {
   currentStateStore.reset();
-  isCorrect.value = false;
 };
 
 defineOptions({

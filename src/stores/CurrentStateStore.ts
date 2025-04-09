@@ -1,15 +1,22 @@
 import { defineStore } from 'pinia';
 import type { Quiz } from 'src/types/Quiz';
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useQuizStore } from './QuizStore';
 
 export const useCurrentStateStore = defineStore('currentStateStore', () => {
   const quizStore = useQuizStore();
 
+  const currentQuiz = ref<Quiz>();
   const progress = ref<number>(0);
   const corrections = ref<number>(0);
-  const currentQuiz = ref<Quiz>();
+
   const chosenAnswer = ref<'a' | 'b' | 'c' | 'd' | ''>('');
+  const isCorrect = computed<boolean>(() => {
+    if (currentQuiz.value) {
+      return currentQuiz.value.answer === chosenAnswer.value;
+    }
+    return false;
+  });
 
   const setCurrentQuiz = (): void => {
     const availableQuizzes = quizStore.quizList.filter((quiz) => !quiz.isShowed);
@@ -26,8 +33,8 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
     }
   };
 
-  const countCorrectNum = (isCorrect: boolean): void => {
-    if (isCorrect) {
+  const countCorrectNum = (): void => {
+    if (isCorrect.value) {
       corrections.value++;
     }
   };
@@ -52,5 +59,6 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
     corrections,
     currentQuiz,
     chosenAnswer,
+    isCorrect,
   };
 });
