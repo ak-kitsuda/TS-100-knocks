@@ -66,17 +66,14 @@
 import { useCurrentStateStore } from 'src/stores/CurrentStateStore';
 import { storeToRefs } from 'pinia';
 
-const QUIZ_NUM: number = 100;
-
 const currentStateStore = useCurrentStateStore();
+const { QUIZ_NUM } = currentStateStore;
 const { currentQuiz, progress, chosenAnswer, isCorrect, corrections } = storeToRefs(currentStateStore);
 
 
 const handleClickOption = (ans: 'a' | 'b' | 'c' | 'd'): void => {
   // すでに回答済みの場合は何もしない
-  if (!currentQuiz.value || chosenAnswer.value) {
-    return;
-  }
+  if (!currentQuiz.value || chosenAnswer.value) return;
 
   chosenAnswer.value = ans;
   currentStateStore.countCorrectNum();

@@ -6,6 +6,7 @@ import { useQuizStore } from './QuizStore';
 export const useCurrentStateStore = defineStore('currentStateStore', () => {
   const quizStore = useQuizStore();
 
+  const QUIZ_NUM: number = 100;
   const currentQuiz = ref<Quiz>();
   const progress = ref<number>(0);
   const corrections = ref<number>(0);
@@ -55,6 +56,7 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
     countCorrectNum,
     reset,
     setCurrentQuiz,
+    QUIZ_NUM,
     progress,
     corrections,
     currentQuiz,
