@@ -31,11 +31,11 @@
       <div class="flex column justify-center">
         <!-- 回答後の表示エリア（未回答時は空白） -->
         <div class="q-mt-sm row items-center" style="min-height: 60px;"
-          :style="{ visibility: isAnswered ? 'visible' : 'hidden' }">
+          :style="{ visibility: chosenAnswer ? 'visible' : 'hidden' }">
 
           <!-- 回答部分 -->
-          <div class="col-6 text-bold text-center" style="font-size: 20px;">
-            <pre
+          <div class="col-6 text-bold text-center">
+            <pre style="font-size: 24px;"
               :class="isCorrect ? 'text-blue' : 'text-red'">{{ isCorrect ? "正解！" : "不正解" }}（ 答え：{{ currentQuiz.answer }} ）</pre>
           </div>
 
@@ -70,20 +70,17 @@ import { ref } from 'vue';
 const QUIZ_NUM: number = 100;
 
 const currentStateStore = useCurrentStateStore();
-const { currentQuiz, progress, isAnswered, corrections } = storeToRefs(currentStateStore);
+const { currentQuiz, progress, chosenAnswer, corrections } = storeToRefs(currentStateStore);
 
-type ansOption = 'a' | 'b' | 'c' | 'd' | null;
-const chosenAns = ref<ansOption>(null);
 const isCorrect = ref<boolean>(false);
 
-const handleClickOption = (ans: Exclude<ansOption, null>): void => {
+const handleClickOption = (ans: 'a' | 'b' | 'c' | 'd'): void => {
   // すでに回答済みの場合は何もしない
-  if (!currentQuiz.value || isAnswered.value) {
+  if (!currentQuiz.value || chosenAnswer.value) {
     return;
   }
 
-  isAnswered.value = true;
-  chosenAns.value = ans;
+  chosenAnswer.value = ans;
   if (ans === currentQuiz.value.answer) {
     isCorrect.value = true;
   }
@@ -93,13 +90,11 @@ const handleClickOption = (ans: Exclude<ansOption, null>): void => {
 const handleClickNext = (): void => {
   currentStateStore.setCurrentQuiz();
   isCorrect.value = false;
-  chosenAns.value = null;
 };
 
 const handleClickReset = (): void => {
   currentStateStore.reset();
   isCorrect.value = false;
-  chosenAns.value = null;
 };
 
 defineOptions({

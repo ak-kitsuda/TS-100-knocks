@@ -9,7 +9,7 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
   const progress = ref<number>(0);
   const corrections = ref<number>(0);
   const currentQuiz = ref<Quiz>();
-  const isAnswered = ref<boolean>(false);
+  const chosenAnswer = ref<'a' | 'b' | 'c' | 'd' | ''>('');
 
   const setCurrentQuiz = (): void => {
     const availableQuizzes = quizStore.quizList.filter((quiz) => !quiz.isShowed);
@@ -22,7 +22,7 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
       currentQuiz.value = availableQuizzes[i];
       if (currentQuiz.value) currentQuiz.value.isShowed = true;
       progress.value++;
-      isAnswered.value = false;
+      chosenAnswer.value = '';
     }
   };
 
@@ -33,7 +33,6 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
   };
 
   const reset = (): void => {
-    isAnswered.value = false;
     progress.value = 0;
     corrections.value = 0;
     quizStore.reset();
@@ -52,6 +51,6 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
     progress,
     corrections,
     currentQuiz,
-    isAnswered,
+    chosenAnswer,
   };
 });
