@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 import type { Quiz } from 'src/types/Quiz';
 import { onMounted, ref } from 'vue';
 import { useQuizStore } from './QuizStore';
-//import { nextTick } from "process";
 
 export const useCurrentStateStore = defineStore('currentStateStore', () => {
   const quizStore = useQuizStore();
@@ -15,16 +14,19 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
   const setCurrentQuiz = (): void => {
     const availableQuizzes = quizStore.quizList.filter((quiz) => !quiz.isShowed);
 
-    if (availableQuizzes.length !== 0) {
+    if (availableQuizzes.length == 0) {
+      currentQuiz.value = undefined;
+      console.log('クイズがありません');
+    } else {
       const i = Math.floor(Math.random() * availableQuizzes.length);
       currentQuiz.value = availableQuizzes[i];
       if (currentQuiz.value) currentQuiz.value.isShowed = true;
-    } else {
-      currentQuiz.value = undefined;
+      progress.value++;
+      isAnswered.value = false;
     }
   };
 
-  const judge = (isCorrect: boolean): void => {
+  const countCorrectNum = (isCorrect: boolean): void => {
     if (isCorrect) {
       corrections.value++;
     }
@@ -44,7 +46,7 @@ export const useCurrentStateStore = defineStore('currentStateStore', () => {
   });
 
   return {
-    judge,
+    countCorrectNum,
     reset,
     setCurrentQuiz,
     progress,

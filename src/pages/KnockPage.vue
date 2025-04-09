@@ -7,19 +7,19 @@
 
       <!-- 進捗表示 -->
       <div class="row justify-around items-center q-pa-sm">
-        <div class="col text-h6 text-center">
+        <div class="col text-center" style="font-size: 24px;">
           <p>{{ progress }} / {{ QUIZ_NUM }}</p>
         </div>
       </div>
 
       <!-- 問題文 -->
-      <q-card class="q-mt-sm q-pa-md flex column items-center">
+      <q-card class="q-pa-md flex column items-center">
         <div v-if="currentQuiz.questionCode" class="full-width bg-black text-white q-px-sm rounded-borders">
           <div v-for="(code, key) in currentQuiz.questionCode" :key="key">
-            <pre class="text-mono">{{ code }}</pre>
+            <pre class="text-mono" style="font-size: 16px;">{{ code }}</pre>
           </div>
         </div>
-        <p class="text-h6 text-left full-width q-mt-sm">{{ currentQuiz.questionText }}</p>
+        <pre class="text-left full-width" style="font-size: 20px;">{{ currentQuiz.questionText }}</pre>
       </q-card>
 
       <!-- 選択肢ボタン -->
@@ -34,7 +34,7 @@
           :style="{ visibility: isAnswered ? 'visible' : 'hidden' }">
 
           <!-- 回答部分 -->
-          <div class="col-6 text-h5 text-bold text-center">
+          <div class="col-6 text-bold text-center" style="font-size: 20px;">
             <pre
               :class="isCorrect ? 'text-blue' : 'text-red'">{{ isCorrect ? "正解！" : "不正解" }}（ 答え：{{ currentQuiz.answer }} ）</pre>
           </div>
@@ -49,7 +49,7 @@
       </div>
 
       <!-- 正解数（最後の問題時のみ表示） -->
-      <div class="q-mt-md col text-h3 text-bold text-center ">
+      <div class="q-mt-md col text-bold text-center" style="font-size: 24px;">
         <p :style="{ visibility: progress === QUIZ_NUM ? 'visible' : 'hidden' }">
           正解率：{{ corrections }} %
         </p>
@@ -77,20 +77,21 @@ const chosenAns = ref<ansOption>(null);
 const isCorrect = ref<boolean>(false);
 
 const handleClickOption = (ans: Exclude<ansOption, null>): void => {
-  if (currentQuiz.value && !isAnswered.value) {
-    isAnswered.value = true;
-    chosenAns.value = ans;
-    if (ans === currentQuiz.value.answer) {
-      isCorrect.value = true;
-    }
-    progress.value++;
+  // すでに回答済みの場合は何もしない
+  if (!currentQuiz.value || isAnswered.value) {
+    return;
   }
-  currentStateStore.judge(isCorrect.value);
+
+  isAnswered.value = true;
+  chosenAns.value = ans;
+  if (ans === currentQuiz.value.answer) {
+    isCorrect.value = true;
+  }
+  currentStateStore.countCorrectNum(isCorrect.value);
 };
 
 const handleClickNext = (): void => {
   currentStateStore.setCurrentQuiz();
-  isAnswered.value = false;
   isCorrect.value = false;
   chosenAns.value = null;
 };

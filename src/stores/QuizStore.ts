@@ -6,12 +6,11 @@ export const useQuizStore = defineStore('quizStore', () => {
   const quizList = ref<Quiz[]>(TS_QUIZ_LIST);
 
   const reset = (): void => {
-    quizList.value.forEach((quiz) => {
-      quiz.isShowed = false;
-    });
-
-    // Vue に変更を検知させるため、新しい配列として代入
-    quizList.value = [...quizList.value];
+    const updatedQuizList: Quiz[] = quizList.value.map((quiz) => ({
+      ...quiz,
+      isShowed: false,
+    }));
+    quizList.value = [...updatedQuizList];
   };
 
   return { quizList, reset };
