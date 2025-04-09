@@ -14,12 +14,12 @@
 
       <!-- 問題文 -->
       <q-card class="q-pa-md flex column items-center">
-        <div v-if="currentQuiz.questionCode" class="full-width bg-black text-white q-px-sm rounded-borders">
+        <div v-if="currentQuiz.questionCode.length > 0" class="full-width bg-black text-white q-px-sm rounded-borders">
           <div v-for="(code, key) in currentQuiz.questionCode" :key="key">
             <pre class="text-mono" style="font-size: 16px;">{{ code }}</pre>
           </div>
         </div>
-        <pre class="text-left full-width" style="font-size: 20px;">{{ currentQuiz.questionText }}</pre>
+        <p class="q-mt-sm text-left full-width" style="font-size: 20px;">{{ currentQuiz.questionText }}</p>
       </q-card>
 
       <!-- 選択肢ボタン -->

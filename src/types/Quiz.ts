@@ -1,5 +1,5 @@
 export type Quiz = {
-  questionCode: string[] | null;
+  questionCode: string[];
   questionText: string;
   options: {
     a: string;

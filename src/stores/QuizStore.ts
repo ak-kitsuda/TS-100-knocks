@@ -18,7 +18,7 @@ export const useQuizStore = defineStore('quizStore', () => {
 
 const TS_QUIZ_LIST: Quiz[] = [
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'プリミティブ型は以下のうちどれか',
     options: { a: 'Number', b: '{}', c: 'Array', d: 'undefined' },
     answer: 'd',
@@ -27,7 +27,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '変数宣言において、letとconstはそれぞれ再代入できるか？',
     options: {
       a: 'let: できる, const: できる',
@@ -50,7 +50,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '使うべきでない変数宣言はどれか',
     options: { a: 'var', b: 'let', c: 'const' },
     answer: 'a',
@@ -81,7 +81,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'number型の宣言において、エラーにならないのはどれか',
     options: { a: '_100', b: '100_000_000', c: '100_', d: '100._0' },
     answer: 'b',
@@ -90,7 +90,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'number型の宣言において、エラーになるのはどれか',
     options: { a: '123', b: '-123', c: '.123', d: '123._0' },
     answer: 'd',
@@ -144,7 +144,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'nullとundefinedの説明で正しいのは？',
     options: {
       a: 'nullは値がないことを示し、undefinedは変数に値が未定義なことを示す',
@@ -157,7 +157,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '意図的に不明な値を宣言したいときに使うプリミティブな型は？',
     options: { a: 'undefined', b: 'null', c: 'symbol', d: '{}' },
     answer: 'b',
@@ -188,7 +188,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'bigint型の宣言方法で正しいのは？',
     options: {
       a: 'const x: bigint = 100;',
@@ -225,7 +225,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '整数の中でも1と2と3のみに値を限定したい場合はどう変数宣言をすればいいか',
     options: {
       a: 'let num: 1 | 2 | 3 = 1;',
@@ -393,7 +393,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'JavaScriptのオブジェクト生成はクラスベースかプロトタイプベースか？',
     options: { a: 'クラスベース', b: 'プロトタイプベース' },
     answer: 'b',
@@ -536,7 +536,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'number型だけが要素の配列を宣言する方法は？',
     options: {
       a: 'let array: number[];',
@@ -954,7 +954,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '全プロパティを必須にするユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'a',
@@ -963,7 +963,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '全プロパティを読み取り専用にするユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'b',
@@ -972,7 +972,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '全プロパティをオプショナルにするユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'c',
@@ -981,7 +981,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '型推論を防ぐためのユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'd',
@@ -990,7 +990,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'Keyの型を指定したオブジェクト型を定義できるユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'a',
@@ -999,7 +999,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'nullとundefinedを除外するユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'b',
@@ -1008,7 +1008,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '関数の戻り値の型を取得するユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'c',
@@ -1017,7 +1017,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'Promiseの解決値の型を取得するユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'd',
@@ -1026,7 +1026,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '任意のプロパティだけを持つオブジェクト型を作るユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'a',
@@ -1035,7 +1035,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '任意のプロパティを除いたオブジェクト型を作るユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'b',
@@ -1044,7 +1044,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '既存の型から任意の型を除外するユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'c',
@@ -1053,7 +1053,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '既存の型から任意の型だけ抽出するユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'd',
@@ -1154,7 +1154,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '次のうち、Promiseの状態として存在しないものはどれ？',
     options: { a: 'pending', b: 'resolved', c: 'fulfilled', d: 'rejected' },
     answer: 'b',
@@ -1251,7 +1251,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: '共変性（Covariance）とは何か？',
     options: {
       a: '親の型を子の型として扱える',
@@ -1516,7 +1516,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'Typescriptで関数の引数に型注釈をつけなかった場合、エラーが起きるか？',
     options: {
       a: 'エラーが起きる',
@@ -1528,7 +1528,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'Javascriptの関数の引数は、基本的に値渡しか参照渡しか？',
     options: {
       a: '値渡し',
@@ -1540,7 +1540,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'Javascriptのオブジェクトは値渡しか参照渡しか？',
     options: {
       a: '値渡し',
@@ -1738,7 +1738,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'typescriptではオーバーロード関数として、関数のシグネチャごとに実装を分けるか？',
     options: {
       a: '分ける',
@@ -1772,7 +1772,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
-    questionCode: null,
+    questionCode: [],
     questionText: 'CommonJSで用いられるインポート/エクスポートの方法は？',
     options: {
       a: 'require() / module.exports',
