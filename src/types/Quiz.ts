@@ -1,5 +1,6 @@
 export type Quiz = {
-  questionCode: string[] | null;
+  id: number;
+  questionCode: string[];
   questionText: string;
   options: {
     a: string;
@@ -9,6 +10,4 @@ export type Quiz = {
   };
   answer: 'a' | 'b' | 'c' | 'd';
   link: string;
-  wrongs: number;
-  isShowed: boolean;
 };
