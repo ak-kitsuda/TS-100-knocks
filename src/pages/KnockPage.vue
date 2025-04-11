@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex items-center column q-pa-md">
-    <div v-if="currentQuiz" class="full-width q-mt-md" style="max-width: 600px;">
+    <div class="full-width q-mt-md" style="max-width: 600px;">
       <!-- 解説ボタン -->
       <q-btn class="absolute-top-right q-ma-sm" label="解説" type="a" :href="currentQuiz.link" target="_blank"
         color="primary" size="lg" />
@@ -50,14 +50,10 @@
 
       <!-- 正解数（最後の問題時のみ表示） -->
       <div class="q-mt-md col text-bold text-center" style="font-size: 24px;">
-        <p :style="{ visibility: progress === QUIZ_NUM ? 'visible' : 'hidden' }">
-          正解率：{{ corrections }} %
+        <p :style="{ visibility: progress === QUIZ_NUM && chosenAnswer ? 'visible' : 'hidden' }">
+          正解数：{{ correctNum }}
         </p>
       </div>
-    </div>
-
-    <div v-else>
-      <p>問題が設定されていません</p>
     </div>
   </q-page>
 </template>
@@ -65,16 +61,13 @@
 <script setup lang="ts">
 import { useCurrentStateStore } from 'src/stores/CurrentStateStore';
 import { storeToRefs } from 'pinia';
+import { QUIZ_NUM } from 'src/constants';
 
 const currentStateStore = useCurrentStateStore();
-const { QUIZ_NUM } = currentStateStore;
-const { currentQuiz, progress, chosenAnswer, isCorrect, corrections } = storeToRefs(currentStateStore);
-
+const { currentQuiz, progress, chosenAnswer, isCorrect, correctNum } = storeToRefs(currentStateStore);
 
 const handleClickOption = (ans: 'a' | 'b' | 'c' | 'd'): void => {
-  // すでに回答済みの場合は何もしない
-  if (!currentQuiz.value || chosenAnswer.value) return;
-
+  if (chosenAnswer.value) return;
   chosenAnswer.value = ans;
   currentStateStore.countCorrectNum();
 };

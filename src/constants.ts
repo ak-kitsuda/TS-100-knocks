@@ -1,22 +1,8 @@
-import { defineStore } from 'pinia';
 import type { Quiz } from 'src/types/Quiz';
-import { ref } from 'vue';
 
-export const useQuizStore = defineStore('quizStore', () => {
-  const quizList = ref<Quiz[]>(TS_QUIZ_LIST);
+export const QUIZ_NUM: number = 100;
 
-  const reset = (): void => {
-    const updatedQuizList: Quiz[] = quizList.value.map((quiz) => ({
-      ...quiz,
-      isShowed: false,
-    }));
-    quizList.value = [...updatedQuizList];
-  };
-
-  return { quizList, reset };
-});
-
-const TS_QUIZ_LIST: Quiz[] = [
+export const TS_QUIZ_LIST: Quiz[] = [
   {
     id: 1,
     questionCode: [],
@@ -24,8 +10,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Number', b: '{}', c: 'Array', d: 'undefined' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/values-types-variables/primitive-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 2,
@@ -39,8 +23,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/let-and-const',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 3,
@@ -49,8 +31,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'any', b: 'number', c: 'string', d: 'bigint' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/bigint',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 4,
@@ -59,8 +39,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'var', b: 'let', c: 'const' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/vars-problems',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 5,
@@ -73,8 +51,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/type-inference',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 6,
@@ -83,8 +59,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '起こる', b: '起こらない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/difference-between-type-inference-and-dynamic-typing',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 7,
@@ -93,8 +67,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '_100', b: '100_000_000', c: '100_', d: '100._0' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/number',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 8,
@@ -103,8 +75,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '123', b: '-123', c: '.123', d: '123._0' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/values-types-variables/number',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 9,
@@ -113,8 +83,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'false', b: 'NaN', c: 'null', d: '百円' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/number',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 10,
@@ -123,8 +91,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'True', b: 'False' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/number',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 11,
@@ -133,8 +99,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'True', b: 'False' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/number/decimal-calculation-error',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 12,
@@ -143,8 +107,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'True', b: 'False' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/number/decimal-calculation-error',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 13,
@@ -153,8 +115,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '${count}', b: 'count', c: '$count', d: '{{count}}' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/string',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 14,
@@ -167,8 +127,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/undefined',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 15,
@@ -177,8 +135,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'undefined', b: 'null', c: 'symbol', d: '{}' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/undefined',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 16,
@@ -187,8 +143,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'null', b: 'name', c: 'undefined', d: '{}' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/undefined',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 17,
@@ -201,8 +155,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'True', b: 'False' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/symbol',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 18,
@@ -216,8 +168,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/bigint',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 19,
@@ -231,8 +181,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/boxing',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 20,
@@ -241,8 +189,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラー', b: '11', c: '0', d: 'null' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/type-coercion',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 21,
@@ -256,8 +202,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/literal-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 22,
@@ -266,8 +210,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/boxing',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 23,
@@ -281,8 +223,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'x1', b: 'x2', c: 'int1', d: 'int2' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/statements/any-vs-unknown',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 24,
@@ -295,8 +235,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'true', b: 'false' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/non-primitives-are-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 25,
@@ -305,8 +243,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/unknown',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 26,
@@ -318,7 +254,6 @@ const TS_QUIZ_LIST: Quiz[] = [
       '    return Math.floor(this.price * 1.1);',
       '  },',
       "  shomikigen: new Date('2022-01-20'),",
-      '};',
     ],
     questionText:
       'productオブジェクト内にある、getTaxIncludedPriceメソッドを実行したい。どのように記述すればいいか？',
@@ -330,8 +265,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/properties-of-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 27,
@@ -340,8 +273,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/properties-of-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 28,
@@ -355,8 +286,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/type-annotation-of-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 29,
@@ -368,8 +297,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/readonly-property',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 30,
@@ -384,8 +311,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/optional-property',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 31,
@@ -394,8 +319,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/excess-property-checking',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 32,
@@ -408,8 +331,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '起きる', b: '起きない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/excess-property-checking',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 33,
@@ -422,8 +343,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/index-signature',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 34,
@@ -432,8 +351,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'クラスベース', b: 'プロトタイプベース' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/prototype-based-programming',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 35,
@@ -442,8 +359,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '{ x: 1 }', b: '[1, 2, 3]', c: 'undefined', d: '/a-z/' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/difference-among-object-and-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 36,
@@ -452,8 +367,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'a = true;', b: 'a = [];', c: 'a = undefined;' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/difference-among-object-and-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 37,
@@ -467,8 +380,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/destructuring-assignment-from-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 38,
@@ -481,8 +392,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '1', b: '""', c: '{}', d: 'undefined' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/destructuring-assignment-from-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 39,
@@ -495,8 +404,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '0, 0', b: '0, 111', c: 'undefined, 111', d: 'undefined, 0' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/destructuring-assignment-from-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 40,
@@ -512,8 +419,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/optional-chaining',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 41,
@@ -527,8 +432,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '起きる', b: '起きない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/shorthand-property-names',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 42,
@@ -547,8 +450,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/optional-chaining',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 43,
@@ -557,8 +458,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Object', b: '{ a: 1, b: 2, c: 3 }', c: 'foo', d: '{}' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/how-to-loop-an-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 44,
@@ -567,8 +466,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '[1,2,3]', b: '["a","b","c"]', c: '[["a",1],["b",2],["c", 3]]' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/object/how-to-loop-an-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 45,
@@ -577,8 +474,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '代入可', b: '代入不可' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/structural-subtyping',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 46,
@@ -592,8 +487,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/type-annotation-of-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 47,
@@ -606,8 +499,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'true', b: 'false' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/array-as-a-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 48,
@@ -621,8 +512,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '[1,2,3]', b: '[1,2,3,4]', c: 'undefined', d: '[]' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/array-as-a-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 49,
@@ -631,8 +520,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'エラーが起こる', b: 'null', c: 'undefined' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/how-to-access-elements-in-an-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 50,
@@ -645,8 +532,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/readonly-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 51,
@@ -655,8 +540,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '1', b: '2', c: '3', d: 'undefined' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/destructuring-assignment-from-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 52,
@@ -665,8 +548,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '1', b: '4', c: '[1, 2, 3, 4]', d: '[2, 3, 4]' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/destructuring-assignment-from-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 53,
@@ -680,8 +561,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '[1, 2]', b: '[3, 4]', c: '[1, 2, 3, 4]' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/array-operations',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 54,
@@ -695,8 +574,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '0 1 2', b: 'a b c', c: 'a 0\nb 1\nc 2' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/how-to-loop-an-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 55,
@@ -714,8 +591,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/how-to-loop-an-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 56,
@@ -724,8 +599,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '[1, 2, 3]', b: '[1, 2, 3, 0, 4]', c: '[0, 1, 2, 3, 4]', d: '[0, 1, 4]' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/spread-syntax-for-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 57,
@@ -739,8 +612,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '[1, 2, 3]', b: '[1, 2, 3, 4]', c: 'undefined', d: 'never' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/values-types-variables/array/spread-syntax-for-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 58,
@@ -749,8 +620,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'any[]', b: '[number, string, boolean]', c: 'unknown[]', d: 'Array<any>' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/tuple',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 59,
@@ -764,8 +633,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/values-types-variables/tuple',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 60,
@@ -774,8 +641,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"Right"', b: 'b', c: '1', d: '2' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/enum/numeric-enum',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 61,
@@ -784,8 +649,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '100', b: 'undefined', c: 'any' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/union',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 62,
@@ -799,8 +662,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/intersection',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 63,
@@ -814,8 +675,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/type-assertion-as',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 64,
@@ -824,8 +683,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'undefined', b: 'Symbol', c: 'function', d: 'object' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/values-types-variables/typeof-operator',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 65,
@@ -837,8 +694,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '[null, 3, 0, null, 1, 2]', b: '[3, 0, 1, 2]', c: '[3, 1, 2]' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/values-types-variables/truthy-falsy-values',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 66,
@@ -859,8 +714,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/variable-scope',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 67,
@@ -869,8 +722,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"greater"', b: '"smaller"', c: 'true', d: 'false' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/statements/ternary-operator',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 68,
@@ -884,8 +735,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"a" "b" "c"', b: '["a", "b", "c"]', c: 'undefined' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/statements/for-of',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 69,
@@ -901,8 +750,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"A"', b: '"B"', c: '"B" "C"', d: 'エラー' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/statements/switch-fallthrough',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 70,
@@ -917,8 +764,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"One"', b: '"One" "Two"', c: '"Two"', d: 'エラー' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/switch-fallthrough',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 71,
@@ -927,8 +772,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"Error!"', b: 'エラー発生', c: 'undefined', d: 'コンパイルエラー' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/statements/exception',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 72,
@@ -937,8 +780,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '代入できる', b: '代入できない' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/never',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 73,
@@ -956,8 +797,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/statements/control-flow-analysis-and-type-guard',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 74,
@@ -966,8 +805,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '"HELLO"', b: 'エラー', c: 'undefined', d: 'hello' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/unknown',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 75,
@@ -981,8 +818,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'HELLO', b: 'コンパイルエラー', c: 'undefined', d: '実行時エラー' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/any-vs-unknown',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 76,
@@ -991,8 +826,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '10', b: 'undefined', c: 'ReferenceError', d: 'null' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/statements/any-vs-unknown',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 77,
@@ -1006,8 +839,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/type-reuse/typeof-type-operator',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 78,
@@ -1028,8 +859,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/keyof-type-operator',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 79,
@@ -1038,8 +867,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/required',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 80,
@@ -1048,8 +875,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/readonly',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 81,
@@ -1058,8 +883,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/partial',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 82,
@@ -1068,8 +891,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/no-infer',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 83,
@@ -1078,8 +899,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/record',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 84,
@@ -1088,8 +907,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/nonnullable',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 85,
@@ -1098,8 +915,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/return-type',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 86,
@@ -1108,8 +923,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/awaited',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 87,
@@ -1118,8 +931,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/pick',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 88,
@@ -1128,8 +939,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/omit',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 89,
@@ -1138,8 +947,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/exclude',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 90,
@@ -1148,8 +955,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/utility-types/extract',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 91,
@@ -1163,8 +968,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/mapped-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 92,
@@ -1178,8 +981,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/indexed-access-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 93,
@@ -1196,8 +997,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/indexed-access-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 94,
@@ -1209,8 +1008,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'string', b: 'number', c: '"YES"', d: '"NO"' },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/type-reuse/conditional-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 95,
@@ -1232,8 +1029,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/asynchronous/promise',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 96,
@@ -1246,8 +1041,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: '1 2 3', b: '1 3 2', c: '2 1 3', d: '3 1 2' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/asynchronous/promise',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 97,
@@ -1256,8 +1049,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'pending', b: 'resolved', c: 'fulfilled', d: 'rejected' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/asynchronous/promise',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 98,
@@ -1274,8 +1065,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/generics/built-in-libraries-using-generics',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 99,
@@ -1289,8 +1078,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/generics/type-variables',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 100,
@@ -1308,8 +1095,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/generics/type-parameter-constraint',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 101,
@@ -1321,8 +1106,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'string', b: 'never', c: 'string | number | boolean', d: 'undefined' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/type-reuse/conditional-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 102,
@@ -1334,8 +1117,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'string', b: 'string[]', c: 'never', d: 'infer' },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/type-reuse/conditional-types',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 103,
@@ -1350,8 +1131,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'bigint', b: 'number', c: 'boolean', d: 'object' },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/generics/default-type-parameter#%E5%9E%8B%E5%BC%95%E6%95%B0%E3%81%AE%E5%88%B6%E7%B4%84%E3%81%A8%E4%BD%B5%E7%94%A8%E3%81%99%E3%82%8B',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 104,
@@ -1365,8 +1144,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/generics/variance',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 105,
@@ -1379,8 +1156,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     options: { a: 'string', b: 'number', c: 'boolean', d: 'string | false' },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/type-reuse/union-distribution',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 106,
@@ -1394,8 +1169,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/functions/function-declaration',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 107,
@@ -1416,8 +1189,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/functions/function-declaration',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 108,
@@ -1429,8 +1200,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/function-expression#%E9%96%A2%E6%95%B0%E5%90%8D%E3%81%AE%E7%9C%81%E7%95%A5',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 109,
@@ -1442,8 +1211,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/arrow-functions#%E3%82%A2%E3%83%AD%E3%83%BC%E9%96%A2%E6%95%B0%E3%81%AE%E7%9C%81%E7%95%A5%E5%BD%A2',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 110,
@@ -1455,8 +1222,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/arrow-functions#%E3%82%A2%E3%83%AD%E3%83%BC%E9%96%A2%E6%95%B0%E3%81%AE%E7%9C%81%E7%95%A5%E5%BD%A2',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 111,
@@ -1471,8 +1236,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/function-type-declaration#%E9%96%A2%E6%95%B0%E5%AE%9F%E8%A3%85%E3%81%AE%E5%9E%8B%E6%B3%A8%E9%87%88%E3%81%AE%E7%9C%81%E7%95%A5',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 112,
@@ -1485,8 +1248,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/function-declaration-and-hoisting',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 113,
@@ -1505,8 +1266,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/function-declaration-and-hoisting',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 114,
@@ -1520,8 +1279,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/functions/function-expression-vs-arrow-functions#this%E3%81%AE%E6%8C%87%E3%81%99%E3%82%82%E3%81%AE',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 115,
@@ -1543,8 +1300,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/function-expression-vs-arrow-functions#%E9%96%A2%E6%95%B0%E5%90%8D%E3%81%AE%E9%87%8D%E8%A4%87',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 116,
@@ -1562,8 +1317,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/functions/function-expression-vs-arrow-functions#%E9%96%A2%E6%95%B0%E5%90%8D%E3%81%AE%E9%87%8D%E8%A4%87',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 117,
@@ -1581,8 +1334,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/function-is-a-value',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 118,
@@ -1594,8 +1345,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/function-is-a-value',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 119,
@@ -1607,8 +1356,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/void-type#undefined%E5%9E%8B%E3%81%A8void%E5%9E%8B%E3%81%AE%E9%81%95%E3%81%84',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 120,
@@ -1620,8 +1367,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/void-type#undefined%E5%9E%8B%E3%81%A8void%E5%9E%8B%E3%81%AE%E9%81%95%E3%81%84',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 121,
@@ -1633,8 +1378,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/void-type#void%E3%81%AFundefined%E3%81%AE%E4%B8%8A%E4%BD%8D%E5%9E%8B',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 122,
@@ -1646,8 +1389,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/function-parameters#%E5%BC%95%E6%95%B0%E3%81%AE%E5%9E%8B',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 123,
@@ -1659,8 +1400,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/pass-by-value',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 124,
@@ -1672,8 +1411,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/pass-by-value',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 125,
@@ -1687,8 +1424,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/functions/optional-parameters#%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B%E3%81%A8undefined%E3%81%AB%E3%81%AA%E3%82%8B',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 126,
@@ -1702,8 +1437,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/functions/optional-parameters#%E7%9C%81%E7%95%A5%E3%81%99%E3%82%8B%E3%81%A8undefined%E3%81%AB%E3%81%AA%E3%82%8B',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 127,
@@ -1715,8 +1448,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/optional-parameters#t--undefined%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 128,
@@ -1729,8 +1460,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/default-parameters',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 129,
@@ -1749,8 +1478,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/functions/default-parameters',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 130,
@@ -1769,8 +1496,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/reference/functions/destructuring-assignment-parameters',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 131,
@@ -1786,8 +1511,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/type-guard-functions',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 132,
@@ -1803,8 +1526,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/type-guard-functions',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 133,
@@ -1825,8 +1546,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/assertion-functions',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 134,
@@ -1850,8 +1569,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/functions/iife',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 135,
@@ -1869,8 +1586,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/reference/functions/callback-functions',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 136,
@@ -1882,8 +1597,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/functions/overload-functions',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 137,
@@ -1905,8 +1618,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/reference/import-export-require#export',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 138,
@@ -1918,8 +1629,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'a',
     link: 'https://typescriptbook.jp/reference/import-export-require#commonjs',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 139,
@@ -1937,8 +1646,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/tips/shallow-copy-object',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 140,
@@ -1956,8 +1663,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'c',
     link: 'https://typescriptbook.jp/tips/merge-objects',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 141,
@@ -1971,8 +1676,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/tips/generates-type-from-array',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 142,
@@ -1986,8 +1689,6 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'd',
     link: 'https://typescriptbook.jp/tips/generates-type-from-object#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%82%92%E5%AE%9A%E6%95%B0%E5%80%A4%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%97%E3%81%9F%E3%81%84%E5%A0%B4%E5%90%88',
-    wrongs: 0,
-    isShowed: false,
   },
   {
     id: 143,
@@ -2007,7 +1708,5 @@ const TS_QUIZ_LIST: Quiz[] = [
     },
     answer: 'b',
     link: 'https://typescriptbook.jp/tips/generates-type-from-object-key#keyof',
-    wrongs: 0,
-    isShowed: false,
   },
 ];

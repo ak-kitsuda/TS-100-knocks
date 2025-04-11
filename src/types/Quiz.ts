@@ -10,6 +10,4 @@ export type Quiz = {
   };
   answer: 'a' | 'b' | 'c' | 'd';
   link: string;
-  wrongs: number;
-  isShowed: boolean;
 };
