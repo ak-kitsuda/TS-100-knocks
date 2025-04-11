@@ -18,6 +18,7 @@ export const useQuizStore = defineStore('quizStore', () => {
 
 const TS_QUIZ_LIST: Quiz[] = [
   {
+    id: 1,
     questionCode: [],
     questionText: 'プリミティブ型は以下のうちどれか',
     options: { a: 'Number', b: '{}', c: 'Array', d: 'undefined' },
@@ -27,6 +28,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 2,
     questionCode: [],
     questionText: '変数宣言において、letとconstはそれぞれ再代入できるか？',
     options: {
@@ -41,6 +43,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 3,
     questionCode: ['const num : ○○= 123456789;'],
     questionText: '変数numを整数のみ代入できるように型注釈せよ',
     options: { a: 'any', b: 'number', c: 'string', d: 'bigint' },
@@ -50,6 +53,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 4,
     questionCode: [],
     questionText: '使うべきでない変数宣言はどれか',
     options: { a: 'var', b: 'let', c: 'const' },
@@ -59,6 +63,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 5,
     questionCode: ['let x = 1;', 'x = "hello";'],
     questionText: 'このコードにおいて、どのようなエラーが起きるか',
     options: {
@@ -72,6 +77,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 6,
     questionCode: ['let x = 1;', 'x = "hello";', 'console.log(x.substring(1,3));'],
     questionText: 'Javascriptでこのコードはエラーが起こるか',
     options: { a: '起こる', b: '起こらない' },
@@ -81,6 +87,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 7,
     questionCode: [],
     questionText: 'number型の宣言において、エラーにならないのはどれか',
     options: { a: '_100', b: '100_000_000', c: '100_', d: '100._0' },
@@ -90,6 +97,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 8,
     questionCode: [],
     questionText: 'number型の宣言において、エラーになるのはどれか',
     options: { a: '123', b: '-123', c: '.123', d: '123._0' },
@@ -99,6 +107,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 9,
     questionCode: ['const price = parseInt("百円");', 'console.log(price);'],
     questionText: 'Javascriptにおける出力結果は？',
     options: { a: 'false', b: 'NaN', c: 'null', d: '百円' },
@@ -108,6 +117,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 10,
     questionCode: ['NaN == NaN;'],
     questionText: 'Javascriptにおいて、この条件式の結果は？',
     options: { a: 'True', b: 'False' },
@@ -117,6 +127,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 11,
     questionCode: ['0.1 + 0.2 === 0.3'],
     questionText: 'Javascriptにおいて、この条件式の結果は？',
     options: { a: 'True', b: 'False' },
@@ -126,6 +137,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 12,
     questionCode: ['0.5 + 0.25 === 0.75'],
     questionText: 'JavaScriptにおいて、この条件式の結果は？',
     options: { a: 'True', b: 'False' },
@@ -135,6 +147,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 13,
     questionCode: ['const count = 10;', 'console.log(`現在、○○名が見ています。`);'],
     questionText: '変数を文字列に埋め込むにはどうすればいいか？',
     options: { a: '${count}', b: 'count', c: '$count', d: '{{count}}' },
@@ -144,6 +157,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 14,
     questionCode: [],
     questionText: 'nullとundefinedの説明で正しいのは？',
     options: {
@@ -157,6 +171,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 15,
     questionCode: [],
     questionText: '意図的に不明な値を宣言したいときに使うプリミティブな型は？',
     options: { a: 'undefined', b: 'null', c: 'symbol', d: '{}' },
@@ -166,6 +181,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 16,
     questionCode: ['const obj = {};', 'console.log(obj.name);'],
     questionText: '出力結果は？',
     options: { a: 'null', b: 'name', c: 'undefined', d: '{}' },
@@ -175,6 +191,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 17,
     questionCode: [
       "const s1 = Symbol('foo');",
       "const s2 = Symbol('foo');",
@@ -188,6 +205,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 18,
     questionCode: [],
     questionText: 'bigint型の宣言方法で正しいのは？',
     options: {
@@ -202,6 +220,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 19,
     questionCode: ["const str: string = 'abc';", 'console.log(str.toUpperCase());'],
     questionText:
       'プリミティブ型である変数strにStringオブジェクトの関数を使っているが、このコードにはどのような問題があるか',
@@ -216,6 +235,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 20,
     questionCode: ["console.log('1' - 1);"],
     questionText: 'TypeScriptでは実行結果はどうなるか',
     options: { a: 'エラー', b: '11', c: '0', d: 'null' },
@@ -225,6 +245,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 21,
     questionCode: [],
     questionText: '整数の中でも1と2と3のみに値を限定したい場合はどう変数宣言をすればいいか',
     options: {
@@ -239,6 +260,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 22,
     questionCode: ['const x: Number = 0;', 'const y: number = x;'],
     questionText: 'TypeScriptにおいて、このコードではエラーが起きるか？',
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
@@ -248,6 +270,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 23,
     questionCode: [
       'const x1: unknown = 10;',
       'const x2: any = 10;',
@@ -262,6 +285,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 24,
     questionCode: [
       'const object1 = { value: 123 };',
       'const object2 = { value: 123 };',
@@ -275,6 +299,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 25,
     questionCode: ["const str = 'a';", 'const num = str as unknown as number;'],
     questionText: '変数numを宣言時にエラーが起きるか？',
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
@@ -284,6 +309,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 26,
     questionCode: [
       'const product = {',
       "  name: 'ミネラルウォーター',",
@@ -308,6 +334,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 27,
     questionCode: ["const obj = { name: 'dog' }", "obj.name = 'cat';"],
     questionText: '2行目でエラーが起きますか？',
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
@@ -317,6 +344,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 28,
     questionCode: ['let person: { name: string; age: number };', "person = { name: 'Alice' };"],
     questionText: 'このコードでエラーが起こる理由を選択せよ',
     options: {
@@ -331,6 +359,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 29,
     questionCode: ['const obj: { foo: number } = { foo: 1 };', 'obj.foo = 2;'],
     questionText: '変数objを読み取り専用にするにはどうすればいいか？',
     options: {
@@ -343,6 +372,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 30,
     questionCode: [
       'type Size = {',
       '  width?: number;',
@@ -358,6 +388,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 31,
     questionCode: ['let onlyX: { x: number };', 'onlyX = { x: 1 };', 'onlyX = { x: 1, y: 2 };'],
     questionText: 'このコードでエラーは起きるか？',
     options: { a: 'エラーが起きる', b: 'エラーが起きない' },
@@ -367,6 +398,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 32,
     questionCode: [
       'const xy: { x: number; y: number } = { x: 1, y: 2 };',
       'let onlyX: { x: number };',
@@ -380,6 +412,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 33,
     questionCode: ['let obj: { [K: string]: number; };'],
     questionText: '変数objに代入できるデータは以下のうちどれか？',
     options: {
@@ -393,6 +426,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 34,
     questionCode: [],
     questionText: 'JavaScriptのオブジェクト生成はクラスベースかプロトタイプベースか？',
     options: { a: 'クラスベース', b: 'プロトタイプベース' },
@@ -402,6 +436,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 35,
     questionCode: ['let a: object;'],
     questionText: '変数aに代入できないものを選んでください。',
     options: { a: '{ x: 1 }', b: '[1, 2, 3]', c: 'undefined', d: '/a-z/' },
@@ -411,6 +446,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 36,
     questionCode: ['let a: {};'],
     questionText: 'tsconfig.jsonでstrictがtrueの場合、変数aに代入できないものを選んでください。',
     options: { a: 'a = true;', b: 'a = [];', c: 'a = undefined;' },
@@ -420,6 +456,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 37,
     questionCode: ['const item = { a: 1, b: 2, c: 3 };'],
     questionText: 'オブジェクトitemのプロパティをまとめて変数として宣言する方法は？',
     options: {
@@ -434,6 +471,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 38,
     questionCode: [
       'const color = { r: 0, g: 1, b: 2, a: 3 };',
       'const { r: red, g: green, b: blue, a: alpha } = color;',
@@ -447,6 +485,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 39,
     questionCode: [
       'const obj = { a: undefined, b: 111 };',
       'const { a = 0, b = 0 } = obj;',
@@ -460,6 +499,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 40,
     questionCode: [
       'const book = {title: "サバイバルTypeScript"};',
       'const title = book === null || book === undefined ? undefined : book.title;',
@@ -476,6 +516,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 41,
     questionCode: [
       'type AB = { a: string; b: string; }',
       'const a = "aaa";',
@@ -490,6 +531,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 42,
     questionCode: [
       'const increment = (n) => n + 1;',
       'const result = increment();',
@@ -509,6 +551,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 43,
     questionCode: ['const foo = { a: 1, b: 2, c: 3 };', 'console.log(Object.getPrototypeOf(foo));'],
     questionText: '何が出力されるか？',
     options: { a: 'Object', b: '{ a: 1, b: 2, c: 3 }', c: 'foo', d: '{}' },
@@ -518,6 +561,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 44,
     questionCode: ['const foo = { a: 1, b: 2, c: 3 };', 'console.log(Object.keys(foo));'],
     questionText: '出力結果は？',
     options: { a: '[1,2,3]', b: '["a","b","c"]', c: '[["a",1],["b",2],["c", 3]]' },
@@ -527,6 +571,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 45,
     questionCode: ['class Person { walk() {} }', 'class Dog { walk() {} }'],
     questionText: 'クラスPersonのインスタンスにDogのインスタンスは代入可能か？',
     options: { a: '代入可', b: '代入不可' },
@@ -536,6 +581,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 46,
     questionCode: [],
     questionText: 'number型だけが要素の配列を宣言する方法は？',
     options: {
@@ -550,6 +596,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 47,
     questionCode: [
       'const list1 = [1, 2, 3];',
       'const list2 = [1, 2, 3];',
@@ -563,6 +610,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 48,
     questionCode: [
       'const arr = [1,2,3];',
       'const backup = arr;',
@@ -577,6 +625,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 49,
     questionCode: ['const abc = ["a", "b", "c"];', 'console.log(abc[100]);'],
     questionText: 'このコードの出力結果は？',
     options: { a: 'エラーが起こる', b: 'null', c: 'undefined' },
@@ -586,6 +635,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 50,
     questionCode: ['const arr: number[] = [1, 2, 3];'],
     questionText: '配列arrを読み取り専用にしてください。',
     options: {
@@ -599,6 +649,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 51,
     questionCode: ['const arr = [1,2,3,4];', 'const [ , a, b, c] = arr;', 'console.log(a);'],
     questionText: 'このコードの出力結果は？',
     options: { a: '1', b: '2', c: '3', d: 'undefined' },
@@ -608,6 +659,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 52,
     questionCode: ['const arr = [1,2,3,4];', 'const [ a, ...b] = arr;', 'console.log(b);'],
     questionText: 'このコードの出力結果は？',
     options: { a: '1', b: '4', c: '[1, 2, 3, 4]', d: '[2, 3, 4]' },
@@ -617,6 +669,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 53,
     questionCode: [
       'const nums1 = [1, 2];',
       'const nums2 = [3, 4];',
@@ -631,6 +684,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 54,
     questionCode: [
       'const arr = ["a", "b", "c"];',
       'arr.forEach((value, i) => {',
@@ -645,6 +699,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 55,
     questionCode: [
       'const arr = ["a", "b", "c"];',
       'const arr2 = arr.map((value) => value + value);',
@@ -663,6 +718,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 56,
     questionCode: ['const arr = [1, 2, 3];', 'const arr2 = [0, ...arr, 4];'],
     questionText: 'arr2にはどんな値が入っているか？',
     options: { a: '[1, 2, 3]', b: '[1, 2, 3, 0, 4]', c: '[0, 1, 2, 3, 4]', d: '[0, 1, 4]' },
@@ -672,6 +728,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 57,
     questionCode: [
       'const arr = [1, 2, 3];',
       'const backup = [...arr];',
@@ -686,6 +743,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 58,
     questionCode: ['function getTuple() {', '  return [42, "hello", false];', '}'],
     questionText: '戻り値の型は？',
     options: { a: 'any[]', b: '[number, string, boolean]', c: 'unknown[]', d: 'Array<any>' },
@@ -695,6 +753,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 59,
     questionCode: ['const data: [number, string, boolean] = [10, "ok", true];'],
     questionText: '変数dataを使ったコードのうち、エラーになるのは？',
     options: {
@@ -709,6 +768,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 60,
     questionCode: ['enum Position {', '  Top,', '  Right,', '  Bottom,', '  Left', '}'],
     questionText: 'Position.Rightの値はどれか？',
     options: { a: '"Right"', b: 'b', c: '1', d: '2' },
@@ -718,6 +778,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 61,
     questionCode: ['let a: number | undefined;'],
     questionText: '変数aに代入してはいけない値は何か？',
     options: { a: '100', b: 'undefined', c: 'any' },
@@ -727,6 +788,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 62,
     questionCode: ['type X = string & number;', 'let value: X = "Hello";'],
     questionText: 'このコードについて正しい説明はどれ？',
     options: {
@@ -741,6 +803,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 63,
     questionCode: ['const num = 123;', 'const str: string = num as string;'],
     questionText: 'コードをコンパイルすると、どのような結果になるか？',
     options: {
@@ -755,6 +818,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 64,
     questionCode: ['console.log(typeof Symbol());'],
     questionText: 'このコードの出力結果は？',
     options: { a: 'undefined', b: 'Symbol', c: 'function', d: 'object' },
@@ -764,6 +828,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 65,
     questionCode: [
       'const array = [null, 3, 0, null, 1, 2];',
       'console.log(array.filter((n) => n));',
@@ -776,6 +841,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 66,
     questionCode: [
       'if (true) {',
       '  var a = 10;',
@@ -797,6 +863,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 67,
     questionCode: ['const result = 10 > 5 ? "greater" : "smaller";', 'console.log(result);'],
     questionText: 'このコードの出力結果は？',
     options: { a: '"greater"', b: '"smaller"', c: 'true', d: 'false' },
@@ -806,6 +873,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 68,
     questionCode: [
       'const arr = ["a", "b", "c"];',
       'for (const item of arr) {',
@@ -820,6 +888,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 69,
     questionCode: [
       'const value = "B";',
       'switch (value) {',
@@ -836,6 +905,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 70,
     questionCode: [
       'const num = 1;',
       'switch (num) {',
@@ -851,6 +921,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 71,
     questionCode: ['try {', '  throw "Error!";', '} catch (e) {', '  console.log(e);', '}'],
     questionText: 'このコードの出力結果は？',
     options: { a: '"Error!"', b: 'エラー発生', c: 'undefined', d: 'コンパイルエラー' },
@@ -860,6 +931,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 72,
     questionCode: ['const any: any = 1;', 'const foo: never = any;'],
     questionText: 'any型はnever型に代入できる？',
     options: { a: '代入できる', b: '代入できない' },
@@ -869,6 +941,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 73,
     questionCode: [
       'function isString(value: unknown): value is string {',
       '  return typeof value === "string";',
@@ -887,6 +960,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 74,
     questionCode: ['let x: unknown = "hello";', 'x.toUpperCase();'],
     questionText: 'このコードの実行結果は？',
     options: { a: '"HELLO"', b: 'エラー', c: 'undefined', d: 'hello' },
@@ -896,6 +970,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 75,
     questionCode: [
       'let a: any = "hello";',
       'let b: unknown = "hello";',
@@ -910,6 +985,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 76,
     questionCode: ['const obj: any = { a:10 };', 'console.log(obj.b)'],
     questionText: 'このコードの出力結果は？',
     options: { a: '10', b: 'undefined', c: 'ReferenceError', d: 'null' },
@@ -919,6 +995,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 77,
     questionCode: ['const point = { x: 135, y: 35 };'],
     questionText: '変数pointから型を定義する方法は？',
     options: {
@@ -933,6 +1010,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 78,
     questionCode: [
       'type xyz = {',
       '  x: string;',
@@ -954,6 +1032,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 79,
     questionCode: [],
     questionText: '全プロパティを必須にするユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
@@ -963,6 +1042,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 80,
     questionCode: [],
     questionText: '全プロパティを読み取り専用にするユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
@@ -972,6 +1052,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 81,
     questionCode: [],
     questionText: '全プロパティをオプショナルにするユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
@@ -981,6 +1062,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 82,
     questionCode: [],
     questionText: '型推論を防ぐためのユーティリティ型は？',
     options: { a: 'Required<T>', b: 'Readonly<T>', c: 'Partial<T>', d: 'NonInfer<T>' },
@@ -990,6 +1072,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 83,
     questionCode: [],
     questionText: 'Keyの型を指定したオブジェクト型を定義できるユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
@@ -999,6 +1082,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 84,
     questionCode: [],
     questionText: 'nullとundefinedを除外するユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
@@ -1008,6 +1092,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 85,
     questionCode: [],
     questionText: '関数の戻り値の型を取得するユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
@@ -1017,6 +1102,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 86,
     questionCode: [],
     questionText: 'Promiseの解決値の型を取得するユーティリティ型は？',
     options: { a: 'Record<Keys, Type>', b: 'NonNullable<T>', c: 'ReturnType<T>', d: 'Awaited<T>' },
@@ -1026,6 +1112,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 87,
     questionCode: [],
     questionText: '任意のプロパティだけを持つオブジェクト型を作るユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
@@ -1035,6 +1122,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 88,
     questionCode: [],
     questionText: '任意のプロパティを除いたオブジェクト型を作るユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
@@ -1044,6 +1132,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 89,
     questionCode: [],
     questionText: '既存の型から任意の型を除外するユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
@@ -1053,6 +1142,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 90,
     questionCode: [],
     questionText: '既存の型から任意の型だけ抽出するユーティリティ型は？',
     options: { a: 'Pick<T,Keys>', b: 'Omit<T, Keys>', c: 'Exclude<T, U>', d: 'Extract<T,U>' },
@@ -1062,6 +1152,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 91,
     questionCode: ['type A = "a" | "b" | "c";', 'type B = {', '  [key in A]: string;', '};'],
     questionText: '型Bで宣言できる変数は？',
     options: {
@@ -1076,6 +1167,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 92,
     questionCode: ['type Foo = { a: number; b: string; c: boolean };', 'type T = Foo[keyof Foo];'],
     questionText: '型Tと同じ型は？',
     options: {
@@ -1090,6 +1182,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 93,
     questionCode: [
       'type Status = ["success", "error", "loading"];',
       'type StatusType = Status[number];',
@@ -1107,6 +1200,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 94,
     questionCode: [
       'type IsString<T> = T extends string ? "YES" : "NO";',
       'type Test = IsString<number>;',
@@ -1119,6 +1213,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 95,
     questionCode: [
       'Promise.reject("Error!")',
       '  .catch((err) => {',
@@ -1141,6 +1236,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 96,
     questionCode: [
       'console.log(1);',
       'Promise.resolve().then(() => console.log(2));',
@@ -1154,6 +1250,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 97,
     questionCode: [],
     questionText: '次のうち、Promiseの状態として存在しないものはどれ？',
     options: { a: 'pending', b: 'resolved', c: 'fulfilled', d: 'rejected' },
@@ -1163,6 +1260,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 98,
     questionCode: [
       'const names = ["Yamamoto", "Matsumoto", "Sato"];',
       'const nameLengths = names.map_____;',
@@ -1180,6 +1278,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 99,
     questionCode: ['function identity<???>(value: ???): ??? {', '  return value;', '}'],
     questionText: '関数 identity で、正しい型変数の使い方はどれ？',
     options: {
@@ -1194,6 +1293,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 100,
     questionCode: [
       'function red<T>(element: T) {',
       '  element.style.backgroundColor = "red";',
@@ -1212,6 +1312,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 101,
     questionCode: [
       'type FilterString<T> = T extends string ? T : never;',
       'type Result = FilterString<string | number | boolean>;',
@@ -1224,6 +1325,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 102,
     questionCode: [
       'type ElementType<T> = T extends (infer U)[] ? U : never;',
       'type T = ElementType<string[]>;',
@@ -1236,6 +1338,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 103,
     questionCode: [
       'interface Serializable<T extends string | number = ???> {',
       '  value: T;',
@@ -1251,6 +1354,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 104,
     questionCode: [],
     questionText: '共変性（Covariance）とは何か？',
     options: {
@@ -1265,6 +1369,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 105,
     questionCode: [
       'type Wrapper<T> = { value: T; };',
       'type IsString<T> = T extends string ? true : false;',
@@ -1278,6 +1383,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 106,
     questionCode: ['function increment(num): number {', '  return num + 1;', '}'],
     questionText: '引数numの型は？',
     options: {
@@ -1292,6 +1398,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 107,
     questionCode: [
       'function getFirst(items: number[]) {',
       '  if (typeof items[0] === "number") {',
@@ -1313,6 +1420,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 108,
     questionCode: ['const func = function () {};'],
     questionText: 'このコードのように関数名を省略可能か？',
     options: {
@@ -1325,6 +1433,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 109,
     questionCode: ['const increment = n: number => n + 1;', 'console.log(increment(1));'],
     questionText: 'このコードではエラーが起きる？',
     options: {
@@ -1337,6 +1446,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 110,
     questionCode: ['const increment = n: number => { foo: n+1 };', 'console.log(increment(1));'],
     questionText: 'このコードではエラーが起きる？',
     options: {
@@ -1349,6 +1459,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 111,
     questionCode: [
       'type Increment = (num: number) => number;',
       'const f: Increment = (num) => num + 1;',
@@ -1364,6 +1475,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 112,
     questionCode: ['hello();', 'function hello(): void {', '  console.log("Hello World");', '}'],
     questionText: 'このコードの実行結果は？',
     options: {
@@ -1377,6 +1489,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 113,
     questionCode: [
       'hello();',
       '',
@@ -1396,6 +1509,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 114,
     questionCode: ['function showThis() {', '  console.log(this);', '}', 'showThis()'],
     questionText: 'Javascriptにおいて、このコード実行結果は？',
     options: {
@@ -1410,6 +1524,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 115,
     questionCode: [
       'function foo() {',
       '  console.log("1つ目の関数");',
@@ -1432,6 +1547,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 116,
     questionCode: [
       'let foo  = () => {console.log("1つ目の関数")};',
       'let foo  = () => {console.log("2つ目の関数")};',
@@ -1450,6 +1566,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 117,
     questionCode: [
       'function hello() {',
       '  return "Hello World";',
@@ -1468,6 +1585,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 118,
     questionCode: ['function hello() {', '  return "Hello World";', '}', 'hello.prop = 123;'],
     questionText: 'このコードではエラーが起きる？',
     options: {
@@ -1480,6 +1598,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 119,
     questionCode: ['function fn(): undefind {}'],
     questionText: 'この関数宣言ではエラーが起きる？',
     options: {
@@ -1492,6 +1611,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 120,
     questionCode: ['function fn(): void {}'],
     questionText: 'この関数宣言ではエラーが起きる？',
     options: {
@@ -1504,6 +1624,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 121,
     questionCode: ['const v: void = undefined;', 'const u: undefined = v;'],
     questionText: 'エラーが起きるのは1行目と2行目のどちら？',
     options: {
@@ -1516,6 +1637,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 122,
     questionCode: [],
     questionText: 'Typescriptで関数の引数に型注釈をつけなかった場合、エラーが起きるか？',
     options: {
@@ -1528,6 +1650,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 123,
     questionCode: [],
     questionText: 'Javascriptの関数の引数は、基本的に値渡しか参照渡しか？',
     options: {
@@ -1540,6 +1663,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 124,
     questionCode: [],
     questionText: 'Javascriptのオブジェクトは値渡しか参照渡しか？',
     options: {
@@ -1552,6 +1676,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 125,
     questionCode: ['function hello(person?: string) {', '  console.log(person);', '}', 'hello();'],
     questionText: 'このコードの実行結果は？',
     options: {
@@ -1566,6 +1691,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 126,
     questionCode: ['function hello(person?: string) {}'],
     questionText: '関数helloの引数の型は？',
     options: {
@@ -1580,6 +1706,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 127,
     questionCode: ['function hello(person: string | undefined) {}', 'hello();'],
     questionText: '関数hello呼び出し時にエラーが起きるか？',
     options: {
@@ -1592,6 +1719,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 128,
     questionCode: ['function foo(x = 1) {', '  console.log(x);', '}', 'foo();'],
     questionText: 'このコードの出力結果は？',
     options: {
@@ -1605,6 +1733,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 129,
     questionCode: [
       'function func(param1, ...params) {',
       '  console.log(param1, params);',
@@ -1624,6 +1753,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 130,
     questionCode: [
       'function foo({ a, c }) {',
       '  console.log(a, c);',
@@ -1643,6 +1773,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 131,
     questionCode: [
       'function isNumber(x: unknown): x is number {',
       '  return typeof x === "number";',
@@ -1659,6 +1790,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 132,
     questionCode: [
       'function isNumber(x: unknown): boolean {',
       '  return typeof x === "number";',
@@ -1675,6 +1807,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 133,
     questionCode: [
       'function isDuck(animal: Animal): asserts animal is Duck {',
       '  if (walksLikeDuck(animal) && quacksLikeDuck(animal)) {',
@@ -1696,6 +1829,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 134,
     questionCode: [
       'const result = ((type: string) => {',
       '  if (type === "Apple") {',
@@ -1720,6 +1854,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 135,
     questionCode: [
       'function greetNewUser(func: (name: string) => string) {',
       '  console.log(func("ご新規"));',
@@ -1738,6 +1873,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 136,
     questionCode: [],
     questionText: 'typescriptではオーバーロード関数として、関数のシグネチャごとに実装を分けるか？',
     options: {
@@ -1750,6 +1886,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 137,
     questionCode: [
       '// math.ts',
       'export function add(a: number, b: number) {',
@@ -1772,6 +1909,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 138,
     questionCode: [],
     questionText: 'CommonJSで用いられるインポート/エクスポートの方法は？',
     options: {
@@ -1784,6 +1922,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 139,
     questionCode: [
       'const obj = { a: 1, b: { c: 2 } };',
       'const copy = { ...obj };',
@@ -1802,6 +1941,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 140,
     questionCode: [
       'const obj1 = {a: 1}',
       'const obj2 = {a: 2, b: 3}',
@@ -1820,6 +1960,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 141,
     questionCode: ['const colors = ["red", "green", "blue"] as const;'],
     questionText: '変数colorsの型はどれ？',
     options: {
@@ -1834,6 +1975,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 142,
     questionCode: ['const user = {', '  name : “taro”,', '  age : 20', '} as const;'],
     questionText: '変数userの型はどれ？',
     options: {
@@ -1848,6 +1990,7 @@ const TS_QUIZ_LIST: Quiz[] = [
     isShowed: false,
   },
   {
+    id: 143,
     questionCode: [
       'const conf = {',
       '  en: "Are you sure?",',
