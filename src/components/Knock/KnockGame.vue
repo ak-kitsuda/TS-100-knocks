@@ -57,25 +57,25 @@
 </template>
 
 <script setup lang="ts">
-import { useCurrentStateStore } from 'src/stores/CurrentStateStore';
+import { useGameStateStore } from 'src/stores/GameStateStore';
 import { storeToRefs } from 'pinia';
 import { QUIZ_NUM } from 'src/constants';
 
-const currentStateStore = useCurrentStateStore();
-const { currentQuiz, progress, chosenAnswer, isCorrect, correctNum } = storeToRefs(currentStateStore);
+const gameStateStore = useGameStateStore();
+const { currentQuiz, progress, chosenAnswer, isCorrect, correctNum } = storeToRefs(gameStateStore);
 
 const handleClickOption = (ans: 'a' | 'b' | 'c' | 'd'): void => {
   if (chosenAnswer.value) return;
   chosenAnswer.value = ans;
-  currentStateStore.countCorrectNum();
+  gameStateStore.countCorrectNum();
 };
 
 const handleClickNext = (): void => {
-  currentStateStore.setCurrentQuiz();
+  gameStateStore.setCurrentQuiz();
 };
 
 const handleClickReset = (): void => {
-  currentStateStore.reset();
+  gameStateStore.reset();
 };
 
 defineOptions({

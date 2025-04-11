@@ -3,7 +3,7 @@ import type { Quiz } from 'src/types/Quiz';
 import { computed, onMounted, ref } from 'vue';
 import { TS_QUIZ_LIST, QUIZ_NUM } from '../constants';
 
-export const useCurrentStateStore = defineStore('currentStateStore', () => {
+export const useGameStateStore = defineStore('gameStateStore', () => {
   const currentQuizList = ref<Quiz[]>(TS_QUIZ_LIST);
   const currentQuiz = ref<Quiz>(TS_QUIZ_LIST[0] as Quiz);
   const progress = ref<number>(0);
